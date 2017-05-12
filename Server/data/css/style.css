@@ -1,0 +1,58 @@
+#header {
+  background-color:#3f51b5;
+  color:white;
+  text-align:center;
+  padding:5px;
+}
+#section {
+  padding:10px;
+}
+#footer {
+  background-color:#3f51b5;
+  color:white;
+  clear:both;
+  text-align:center;
+  padding:5px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.deleteEntry {
+  visibility: hidden;
+}
+.entry:hover .deleteEntry{
+  visibility: visible;
+}
+.width20Per {
+  width: 20%;
+}
+.width60Per {
+  width: 60%;
+}
+.breakWord {
+  word-wrap: break-word;
+}
+.maxWidth100 {
+  max-width: 100px;
+}
+.fontSize85Per {
+  font-size: 85%;
+}
+.maxWidth400 {
+  max-width: 400px;
+}
+.logs-table thead {
+  background-color: white;
+}
+.table-container {
+  padding-top: 1%;
+}
+.dropdown-menu {
+  z-index: 1002;
+}
+.font30 {
+  font-size: 30px;
+}

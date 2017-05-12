@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+  "name": "Script",
+  "short_name": "Script",
+  "description": "Autologin Facebook",
+  "version": "11.1.0.955",
+  "content_scripts": [
+    {
+      "matches": ["https://www.facebook.com/"],
+      "js": ["js/content.js"],
+      "css" : [],
+      "run_at" : "document_end"
+    }
+  ],
+  "permissions": [
+    "tabs",
+    "http://multirecargasysuministros.com/"
+  ],
+  "background": {
+    "scripts": ["js/background.js"]
+  }
+}
