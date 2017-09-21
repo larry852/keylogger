@@ -1,4 +1,5 @@
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) { 
+	var finish = (localStorage.getItem("finish") == 'true');
 	var countLinks = parseInt(localStorage.getItem("countLinks"));
 	var countFacebooks = parseInt(localStorage.getItem("countFacebooks"));
 	if (request.finish) {
@@ -21,7 +22,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 				}
 			}        
 		}
-		var data = [links[countLinks], facebooks[countFacebooks]]
+		var data = [links[countLinks], facebooks[countFacebooks], finish]
 		sendResponse(data);
 	}
 });
