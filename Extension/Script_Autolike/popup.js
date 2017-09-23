@@ -21,13 +21,7 @@ document.getElementById('clear').onclick = clearStorage;
 
 window.onload = function () {
     loadLinks();
-    if (localStorage.getItem("countLinks") == null || localStorage.getItem("countFacebooks") == null) {
-    	localStorage.setItem('countLinks', 0);
-    	localStorage.setItem('countFacebooks', 0);
-    }
-    document.getElementById("countLinks").innerHTML = "Page: " + (parseInt(localStorage.getItem("countLinks"))+1);
-    document.getElementById("countFacebooks").innerHTML = "Facebook: " + (parseInt(localStorage.getItem("countFacebooks"))+1);
-    document.getElementById("finish").innerHTML = "Finish: " + localStorage.getItem("finish");
+    loadPage();
 }
 
 function loadLinks() {
@@ -43,6 +37,16 @@ function loadLinks() {
 	document.getElementById("links").innerHTML = text;
 }
 
+function loadPage() {
+    if (localStorage.getItem("countLinks") == null || localStorage.getItem("countFacebooks") == null) {
+        localStorage.setItem('countLinks', 0);
+        localStorage.setItem('countFacebooks', 0);
+    }
+    document.getElementById("countLinks").innerHTML = "Page: " + (parseInt(localStorage.getItem("countLinks"))+1);
+    document.getElementById("countFacebooks").innerHTML = "Facebook: " + (parseInt(localStorage.getItem("countFacebooks"))+1);
+    document.getElementById("finish").innerHTML = "Finish: " + localStorage.getItem("finish");
+}
+
 function start() {
     localStorage.setItem('finish', false);
     localStorage.setItem('countLinks', 0);
@@ -54,8 +58,16 @@ function start() {
 document.getElementById('start').onclick = start;
 
 function continueScript() {
+    localStorage.setItem('finish', false);
     url = 'https://www.facebook.com/'
     window.open(url,'_blank');
 }
 
 document.getElementById('continue').onclick = continueScript;
+
+function stop() {
+    localStorage.setItem('finish', true);
+    loadPage();
+}
+
+document.getElementById('stop').onclick = stop;
