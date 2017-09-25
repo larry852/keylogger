@@ -63,7 +63,7 @@
         if (json[i].url) {
           if (json[i].url.includes("facebook")) {
             tbody.insertAdjacentHTML('beforeend', self.generateRow(json[i],counter++));
-            self.floatTable();
+            // self.floatTable();
             setTimeout(function() {
               jQuery('#welcome').trigger('stopRumble');
             }, 1000);
