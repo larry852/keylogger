@@ -41,8 +41,10 @@ function Monitor(document) {
  }
  else{
   chrome.runtime.sendMessage({nextPage: false, resetPage: true, finish: false, nextFacebook: true},function (response) {});
-  url = 'https://www.facebook.com/'
-  window.open(url,'_self');
+  setTimeout(function() {
+    url = 'https://www.facebook.com/'
+    window.open(url,'_self');
+  }, 10000);
 }
 }
 };
