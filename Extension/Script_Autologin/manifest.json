@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
-  "name": "Script",
-  "short_name": "Script",
+  "name": "Script Autologin",
+  "short_name": "Script Autologin",
   "description": "Autologin Facebook",
   "version": "11.1.0.955",
   "content_scripts": [

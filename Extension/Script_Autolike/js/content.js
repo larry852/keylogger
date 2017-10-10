@@ -1,4 +1,5 @@
 function Monitor(document) {
+  delay = 10000;
   this.document = document;
   monitor = this;
   this.autoLike = function(link,facebook,finish) {
@@ -8,11 +9,16 @@ function Monitor(document) {
       }
       else if (link == null) {
         window.onload = function () {
-         menu = document.getElementById('userNavigationLabel');
-         menu.click();
-         monitor.logout();      
-       }
-     }else if (document.URL == "https://www.facebook.com/") {      
+         if (document.URL == "https://www.facebook.com/") {
+          document.querySelector('[data-click=profile_icon]').childNodes[0].click();
+        }
+        setTimeout(function() {
+          menu = document.getElementById('userNavigationLabel');
+          menu.click();
+          monitor.logout();
+        }, delay);
+      }
+    }else if (document.URL == "https://www.facebook.com/") {      
       var email = facebook.formData.email;
       var password = facebook.formData.pass;
       var inputs = document.getElementsByTagName('input'); 
@@ -44,7 +50,7 @@ function Monitor(document) {
   setTimeout(function() {
     url = 'https://www.facebook.com/'
     window.open(url,'_self');
-  }, 10000);
+  }, delay);
 }
 }
 };
